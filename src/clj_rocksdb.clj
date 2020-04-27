@@ -332,7 +332,7 @@
 (defn sync
   "Forces the database to fsync."
   [db]
-  (with-open [^Batch batch (batch- db (doto (WriteOptions.) (.sync true)))]))
+  (with-open [^Batch batch (batch- db (doto (WriteOptions.) (.setSync true)))]))
     
 
 (defn stats
